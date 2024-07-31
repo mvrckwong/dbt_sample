@@ -6,6 +6,9 @@ config-version: 2
 
 profile: 'market_profile'
 
+# Define the paths
+model-paths: ["models"]
+
 # Define the target path for compiled SQL files
 target-path: "target"
 clean-targets:
@@ -14,9 +17,8 @@ clean-targets:
 models:
   market_analysis:
     raw:
-      materialized: view
-      schema: public
-    staging:
-      materialized: view
+      +materialized: view
+    stg:
+      +materialized: table
     # production:
     #   materialized: table
