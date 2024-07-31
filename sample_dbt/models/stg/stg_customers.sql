@@ -1,13 +1,11 @@
 {{ config(
     materialized='table',
-    table_type='staging',
-    full_refresh=True,
-    alias='sample_sample_staging_customers'
+    alias='stg_fact_customers',
+    database='stg'
 ) }}
 
--- 
 WITH source AS (
-    SELECT * FROM {{ ref('raw_customers') }}
+    SELECT * FROM customers
 )
 SELECT
     customer_id,
