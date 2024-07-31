@@ -17,11 +17,12 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+# directories to be removed by `dbt clean`
+clean-targets:
   - "target"
   - "dbt_packages"
-
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -29,8 +30,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+# models:
+#   current_project:
+#     raw:
+#       materialized: table  # view or 'table', 'incremental' depending on your use case
+#     stg:
+#       materialized: table  # view or 'table', 'incremental' depending on your use case
+#     prod:
+#       materialized: table  # view or 'table', 'incremental' depending on your use case
+
 models:
-  sample_dbt:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+  current_project:
+    raw:
       +materialized: view
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
