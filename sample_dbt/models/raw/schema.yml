@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: your_database_name
+    schema: your_schema_name
+    tables:
+      - name: customers
+      - name: products
+      - name: region
+      - name: returns
+      - name: stores
+      - name: calendar
+      - name: overall_transactions
