@@ -4,7 +4,7 @@ name: 'sample_dbt'
 version: '1.0'
 config-version: 2
 
-profile: 'sample_dbt'
+profile: 'market_profile'
 
 # Define the target path for compiled SQL files
 target-path: "target"
@@ -16,7 +16,7 @@ models:
     raw:
       materialized: view
       schema: public
-    # staging:
-    #   materialized: view
+    staging:
+      materialized: view
     # production:
     #   materialized: table

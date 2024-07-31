@@ -1,8 +1,8 @@
 -- models/raw/raw_customers.sql
 
 {{ config(
-    materialized='view',
+    materialized='table',
     schema='public'
 ) }}
 
-select * from raw.customers
+select * from customers
