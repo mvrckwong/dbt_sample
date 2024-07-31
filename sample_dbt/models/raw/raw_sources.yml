@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: raw_data
-    database: your_database_name
-    schema: your_schema_name
+  - name: raw
+    database: raw_database
+    schema: public
     tables:
       - name: customers
       - name: products
