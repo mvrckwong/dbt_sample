@@ -5,6 +5,7 @@
     alias='sample_sample_staging_customers'
 ) }}
 
+-- 
 WITH source AS (
     SELECT * FROM {{ ref('raw_customers') }}
 )
