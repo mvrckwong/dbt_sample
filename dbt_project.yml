@@ -26,9 +26,10 @@ models:
   market_analysis:
     raw:
       materialized: view
-      +schema: raw
+      schema: raw
     staging:
       materialized: table
-      +schema: stg
-    # production:
-    #   materialized: table
+      schema: stg
+    production:
+      materialized: table
+      schema: prod
