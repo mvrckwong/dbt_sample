@@ -10,6 +10,7 @@ WITH source AS (
         sales_region::varchar
     FROM raw.regions
 )
+
 SELECT *
 FROM source
-ORDER BY region_id ASC
+ORDER BY region_id ASC;

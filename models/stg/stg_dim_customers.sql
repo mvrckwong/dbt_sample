@@ -24,6 +24,7 @@ WITH source AS (
         homeowner::boolean AS is_homeowner
     FROM raw.customers
 )
+
 SELECT *
 FROM source
-ORDER BY customer_id ASC
+ORDER BY customer_id ASC;

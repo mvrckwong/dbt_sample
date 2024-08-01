@@ -16,6 +16,7 @@ WITH source AS (
         EXTRACT(WEEK FROM date) AS week_of_year
     FROM raw.calendar
 )
+
 SELECT *
 FROM source
-ORDER BY calendar_date ASC
+ORDER BY calendar_date ASC;
